@@ -100,15 +100,9 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 
 ## Screenshots
 
-&#x20;*Figure: Example placeholder screenshot of the app’s UI (login and feed screens).*
+### 📱 Login/Feed Screen
+![Login/Feed Screen](https://github.com/Shauryaraje7/Social-Media-Applcation/blob/main/ios/WhatsApp%20Image%202025-06-08%20at%2002.31.03.jpeg?raw=true)
 
-Below are placeholder images for key app screens. Replace these with actual screenshots when available:
+### 💬 Chat Screen
+![Chat Screen](https://github.com/Shauryaraje7/Social-Media-Applcation/blob/main/ios/WhatsApp%20Image%202025-06-08%20at%2002.33.56.jpeg?raw=true)
 
-* **Login:** The user registration and login screen.
-* **Feed:** The main social feed displaying posts. Users can like and comment on posts.
-* **Chat:** The messaging interface for real-time conversations.
-
-```
-```
-
-**Sources:** React Native documentation, MongoDB documentation, and example MERN social app guides.
