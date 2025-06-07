@@ -48,7 +48,8 @@ Follow these steps to set up and run the app locally:
    * Start the Metro bundler:
 
      ```bash
-     npm start
+ npx react-native run-android
+
      ```
 
      (This launches React Native’s Metro server.)
