@@ -8,8 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Replace with your MongoDB Atlas connection string
-const uri = "mongodb+srv://shauryarajeyadav:1234567890@cluster0.dxnyj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "...";
 const JWT_SECRET = 'your-secret-key'; // Change this to a secure key in production
 
 mongoose.connect(uri)
