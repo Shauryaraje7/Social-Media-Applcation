@@ -1,97 +1,113 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Social Media Chat Application
 
-# Getting Started
+A React Native–based social media chat app with a Node.js/Express backend and MongoDB database. This mobile app lets users register, log in, and interact through posts and messages. It provides a feed of user posts (with like and comment features) and a real-time chat interface for messaging friends. The backend stores user data, posts, and comments in MongoDB, a popular NoSQL document database.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Key Features
 
-## Step 1: Start Metro
+* **User Authentication:** Secure sign-up and login with password hashing and token-based auth.
+* **Post Feed:** Users can create posts and browse a main feed of content from others (text, images, etc.).
+* **Likes & Comments:** Engage with posts by liking and commenting on them.
+* **Real-time Chat:** Instant messaging between users in real time, enabling conversations alongside the social feed.
+* **Profile Management:** Each user has a profile page; users can update their personal information and profile picture.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Technologies Used
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+* **React Native:** Cross-platform framework for building native mobile apps on Android and iOS.
+* **Node.js & Express.js:** Backend runtime and web framework for building the API server.
+* **MongoDB:** NoSQL document database for storing app data (users, posts, comments).
+* **Additional:** JavaScript (ES6+), React Navigation for screen routing, and Axios (or fetch) for HTTP requests.
 
-```sh
-# Using npm
-npm start
+## Installation
 
-# OR using Yarn
-yarn start
+Follow these steps to set up and run the app locally:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Shauryaraje7/Social-Media-Applcation.git
+   cd Social-Media-Applcation
+   ```
+
+2. **Backend setup:**
+
+   * Navigate to the `BACKEND` directory: `cd BACKEND`.
+   * Install dependencies: `npm install` (or `yarn install`).
+   * **Configure MongoDB:** Create a `.env` file in `BACKEND` and add your MongoDB connection string. For example:
+
+     ```bash
+     MONGO_URI='mongo+srv://<USERNAME>:<PASSWORD>@<HOST>/<DATABASE>?retryWrites=true&w=majority'
+     ```
+
+     (Replace `<USERNAME>`, `<PASSWORD>`, `<HOST>`, and `<DATABASE>` with your MongoDB Atlas or local cluster details.)
+   * Start the backend server: `npm start` (or `node server.js`).
+
+3. **Frontend (React Native) setup:**
+
+   * Return to the project root: `cd ..`.
+   * Install app dependencies: `npm install` (or `yarn`).
+   * Start the Metro bundler:
+
+     ```bash
+     npm start
+     ```
+
+     (This launches React Native’s Metro server.)
+
+4. **Run the app on a device/emulator:**
+
+   * **Android:** In a new terminal (with Metro still running), execute:
+
+     ```bash
+     npm run android
+     ```
+
+     This builds the app and runs it on an Android emulator or connected device.
+   * **iOS (Mac only):** Ensure CocoaPods are installed by running `cd ios && pod install`. Then run:
+
+     ```bash
+     npm run ios
+     ```
+
+     to build and launch the app on the iOS Simulator.
+
+## Configuring the MongoDB Connection
+
+In the `BACKEND/.env` file, set the `MONGO_URI` to point to your MongoDB database. This string should include your credentials and database name. For example:
+
+```bash
+MONGO_URI=mongodb+srv://user123:myPassword@cluster0.mongodb.net/myDatabase?retryWrites=true&w=majority
 ```
 
-## Step 2: Build and run your app
+This ensures the server can connect to MongoDB. After setting `MONGO_URI`, restart the backend server so it picks up the change.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Usage
 
-### Android
+* **Launch the App:** Open the app on your device or emulator after installation completes.
+* **Sign Up / Sign In:** On first launch, register a new account or log in with existing credentials.
+* **Browsing the Feed:** Once signed in, the main feed screen displays posts from all users. Scroll to view more posts.
+* **Liking & Commenting:** Tap the heart (♥) icon on a post to like it. Tap the comment (💬) icon to open the comment view; enter text and submit to comment.
+* **Chat:** Switch to the “Chat” tab (or screen) to see your message list. Tap a conversation to send and receive messages in real time.
+* **Profile:** Access your profile screen to update your personal info or change your profile picture.
 
-```sh
-# Using npm
-npm run android
+## Contributing
 
-# OR using Yarn
-yarn android
+Contributions are welcome! If you find a bug or want to add a feature, feel free to open an issue or submit a pull request. Please fork the repository, create a feature branch, and ensure your code follows existing style and passes any lint checks. For substantial changes, it’s recommended to open an issue first to discuss your ideas. Refer to a [CONTRIBUTING.md](CONTRIBUTING.md) template if available.
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details. You are free to use, modify, and distribute this software under the terms of this license.
+
+## Screenshots
+
+&#x20;*Figure: Example placeholder screenshot of the app’s UI (login and feed screens).*
+
+Below are placeholder images for key app screens. Replace these with actual screenshots when available:
+
+* **Login:** The user registration and login screen.
+* **Feed:** The main social feed displaying posts. Users can like and comment on posts.
+* **Chat:** The messaging interface for real-time conversations.
+
+```
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+**Sources:** React Native documentation, MongoDB documentation, and example MERN social app guides.
